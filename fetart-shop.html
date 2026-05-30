@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FET ART GALLERY — Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/shop.css">
+</head>
+<body>
+
+<!-- CART OVERLAY & DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div class="cart-title">MON PANIER</div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty-msg" id="cartEmpty">Ton panier est vide </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-amount" id="cartTotal">€0</span>
+    </div>
+    <button class="checkout-btn">Finaliser la commande →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-dot"></span>
+  <span id="toastMsg">Ajouté au panier</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="fetart-gallery.html" class="nav-logo">FET'ART <span class="nav-logo-badge">Gallery</span></a>
+  <div class="nav-right">
+    <a href="fetart-gallery.html" class="nav-back"> Accueil</a>
+    <button class="cart-btn" onclick="openCart()">
+      🛍 Panier
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SHOP -->
+<div class="shop-hero">
+  <div class="shop-hero-inner">
+    <div class="shop-breadcrumb"><a href="fetart-gallery.html">Accueil</a> / Shop</div>
+    <h1 class="shop-hero-title">ALL DROPS</h1>
+    <p class="shop-hero-sub"><span id="visibleCount">12</span> pièces disponibles — Éditions limitées</p>
+  </div>
+</div>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="search-wrap">
+    <span class="search-icon"></span>
+    <input class="search-input" type="text" id="searchInput" placeholder="Rechercher..." oninput="applyFilters()">
+  </div>
+  <div class="filter-group">
+    <button class="filter-btn active" data-cat="all" onclick="setFilter(this)">Tout</button>
+    <button class="filter-btn" data-cat="hoodie" onclick="setFilter(this)">Hoodies</button>
+    <button class="filter-btn" data-cat="jersey" onclick="setFilter(this)">Jerseys</button>
+    <button class="filter-btn" data-cat="tshirt" onclick="setFilter(this)">T-Shirts</button>
+    <button class="filter-btn" data-cat="accessoire" onclick="setFilter(this)">Accessoires</button>
+  </div>
+  <div class="sort-wrap">
+    <span class="sort-label">Trier :</span>
+    <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+      <option value="default">Nouveautés</option>
+      <option value="price-asc">Prix croissant</option>
+      <option value="price-desc">Prix décroissant</option>
+      <option value="name">Nom A–Z</option>
+    </select>
+  </div>
+  <div class="results-count"><span id="countLabel">12</span> résultats</div>
+</div>
+
+<!-- GRID -->
+<div class="shop-main">
+  <div class="products-grid" id="productsGrid">
+
+    <!-- 1 — Hoodie Pink Gallery -->
+    <div class="product-card" data-cat="hoodie" data-price="89" data-name="hoodie pink gallery" data-new="1">
+      <span class="card-badge badge-new">New</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-p"></div>
+        <svg class="card-svg" viewBox="0 0 200 240" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70 36 Q100 12 130 36 L135 62 Q100 48 75 62Z" fill="white" opacity="0.9"/>
+          <path d="M32 68 L24 160 L32 232 L168 232 L176 160 L168 68 Q153 58 135 56 L132 90 Q100 102 78 90 L75 56 Q47 58 32 68Z" fill="white" opacity="0.88"/>
+          <path d="M32 68 L8 78 L4 162 L34 157 L38 122 L32 86Z" fill="rgba(255,255,255,0.75)"/>
+          <path d="M168 68 L192 78 L196 162 L166 157 L162 122 L168 86Z" fill="rgba(255,255,255,0.75)"/>
+          <rect x="4" y="155" width="30" height="10" rx="3" fill="rgba(255,255,255,0.6)"/>
+          <rect x="166" y="155" width="30" height="10" rx="3" fill="rgba(255,255,255,0.6)"/>
+          <rect x="32" y="222" width="136" height="12" rx="3" fill="rgba(255,255,255,0.6)"/>
+          <rect x="70" y="138" width="60" height="56" rx="3" fill="rgba(255,63,164,0.25)" stroke="rgba(255,63,164,0.6)" stroke-width="1"/>
+          <text x="100" y="158" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="900" fill="#FF3FA4" letter-spacing="1">FET ART</text>
+          <text x="100" y="174" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#FF3FA4">88</text>
+          <text x="100" y="186" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="rgba(255,63,164,0.7)" letter-spacing="1.5">GALLERY</text>
+          <line x1="4" y1="138" x2="34" y2="138" stroke="rgba(255,63,164,0.5)" stroke-width="1.5"/>
+          <line x1="4" y1="144" x2="34" y2="144" stroke="rgba(255,63,164,0.5)" stroke-width="1.5"/>
+          <line x1="166" y1="138" x2="196" y2="138" stroke="rgba(255,63,164,0.5)" stroke-width="1.5"/>
+          <line x1="166" y1="144" x2="196" y2="144" stroke="rgba(255,63,164,0.5)" stroke-width="1.5"/>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn out" disabled>XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Hoodie Pink Gallery', 89, 'hoodie')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">HOODIE PINK GALLERY</div><div class="card-cat">Hoodie</div></div>
+        <div class="card-price-block"><div class="card-price">€89</div></div>
+      </div>
+    </div>
+
+    <!-- 2 — Jersey 88 Dark -->
+    <div class="product-card" data-cat="jersey" data-price="75" data-name="jersey 88 dark" data-new="1">
+      <span class="card-badge badge-ltd">Ltd</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-d"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="#1A1A2E" stroke="#FF3FA4" stroke-width="1.5"/>
+          <text x="100" y="125" text-anchor="middle" font-family="sans-serif" font-size="58" font-weight="900" fill="white" opacity="0.9" letter-spacing="-2">88</text>
+          <text x="100" y="72" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#FF3FA4" letter-spacing="2">FET ART</text>
+          <line x1="57" y1="155" x2="143" y2="155" stroke="white" stroke-width="2" opacity="0.15"/>
+          <line x1="57" y1="162" x2="143" y2="162" stroke="white" stroke-width="2" opacity="0.15"/>
+          <rect x="57" y="196" width="86" height="12" rx="2" fill="#0A0A1A"/>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Jersey 88 Dark', 75, 'jersey')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">JERSEY 88 DARK</div><div class="card-cat">Jersey</div></div>
+        <div class="card-price-block"><div class="card-price">€75</div></div>
+      </div>
+    </div>
+
+    <!-- 3 — Tee Property Of -->
+    <div class="product-card" data-cat="tshirt" data-price="55" data-name="tee property of" data-new="1">
+      <span class="card-badge badge-hot"> Hot</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-r"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="white"/>
+          <path d="M45 22 L22 56 L50 73 L57 50" fill="none" stroke="#E8192C" stroke-width="3"/>
+          <path d="M155 22 L178 56 L150 73 L143 50" fill="none" stroke="#E8192C" stroke-width="3"/>
+          <line x1="57" y1="60" x2="57" y2="205" stroke="#E8192C" stroke-width="3"/>
+          <line x1="143" y1="60" x2="143" y2="205" stroke="#E8192C" stroke-width="3"/>
+          <text x="100" y="110" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="900" fill="#E8192C" letter-spacing="1.5">PROPERTY OF</text>
+          <text x="100" y="130" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#E8192C" letter-spacing="1">FET ART</text>
+          <text x="100" y="148" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#E8192C" letter-spacing="1">UNIVERSITY</text>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Tee Property Of', 55, 'tshirt')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">TEE PROPERTY OF</div><div class="card-cat">T-Shirt</div></div>
+        <div class="card-price-block"><div class="card-price">€55</div></div>
+      </div>
+    </div>
+
+    <!-- 4 — Snapback Cap -->
+    <div class="product-card" data-cat="accessoire" data-price="45" data-name="snapback cap" data-new="0">
+      <div class="card-img-wrap">
+        <div class="card-bg bg-w"></div>
+        <svg class="card-svg" viewBox="0 0 200 160" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 100 Q22 44 100 32 Q178 44 178 100 L172 107 L160 107 L155 100 Q155 60 100 52 Q45 60 45 100 L40 107 L28 107Z" fill="#111" stroke="#FF3FA4" stroke-width="1.5"/>
+          <path d="M22 100 Q0 107 5 120 L158 120 Q164 120 164 107Z" fill="#0A0A0A" stroke="#2A2A2A" stroke-width="1"/>
+          <line x1="100" y1="32" x2="100" y2="100" stroke="#222" stroke-width="1"/>
+          <line x1="62" y1="38" x2="54" y2="100" stroke="#222" stroke-width="1"/>
+          <line x1="138" y1="38" x2="146" y2="100" stroke="#222" stroke-width="1"/>
+          <circle cx="100" cy="72" r="20" fill="#FF3FA4" opacity="0.9"/>
+          <text x="100" y="69" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="900" fill="white" letter-spacing="0.5">FET</text>
+          <text x="100" y="80" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="900" fill="white" letter-spacing="0.5">ART</text>
+          <rect x="128" y="103" width="34" height="8" rx="2" fill="#1A1A1A" stroke="#333" stroke-width="0.5"/>
+          <line x1="133" y1="107" x2="157" y2="107" stroke="#444" stroke-width="0.5"/>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Taille unique</span>
+            <div class="size-btns">
+              <button class="size-btn selected" onclick="selectSize(this)">OS</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Snapback Cap', 45, 'accessoire')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">SNAPBACK CAP</div><div class="card-cat">Accessoire</div></div>
+        <div class="card-price-block"><div class="card-price">€45</div></div>
+      </div>
+    </div>
+
+    <!-- 5 — Hoodie Red/White -->
+    <div class="product-card" data-cat="hoodie" data-price="89" data-name="hoodie red white" data-new="1">
+      <span class="card-badge badge-new">New</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-r"></div>
+        <svg class="card-svg" viewBox="0 0 200 240" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70 36 Q100 12 130 36 L135 62 Q100 48 75 62Z" fill="#C8192C" stroke="white" stroke-width="1"/>
+          <path d="M32 68 L24 160 L32 232 L168 232 L176 160 L168 68 Q153 58 135 56 L132 90 Q100 102 78 90 L75 56 Q47 58 32 68Z" fill="#D42035" stroke="white" stroke-width="0.8"/>
+          <path d="M32 68 L8 78 L4 162 L34 157 L38 122 L32 86Z" fill="#B01828" stroke="white" stroke-width="0.8"/>
+          <path d="M168 68 L192 78 L196 162 L166 157 L162 122 L168 86Z" fill="#B01828" stroke="white" stroke-width="0.8"/>
+          <rect x="4" y="155" width="30" height="10" rx="3" fill="#901015"/>
+          <rect x="166" y="155" width="30" height="10" rx="3" fill="#901015"/>
+          <rect x="32" y="222" width="136" height="12" rx="3" fill="#901015"/>
+          <rect x="70" y="138" width="60" height="58" rx="3" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+          <text x="100" y="158" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="900" fill="white" letter-spacing="1">FET ART</text>
+          <text x="100" y="176" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="900" fill="white">88</text>
+          <text x="100" y="188" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="1.5">GALLERY</text>
+          <line x1="4" y1="140" x2="34" y2="140" stroke="white" stroke-width="2" opacity="0.4"/>
+          <line x1="4" y1="147" x2="34" y2="147" stroke="white" stroke-width="2" opacity="0.4"/>
+          <line x1="166" y1="140" x2="196" y2="140" stroke="white" stroke-width="2" opacity="0.4"/>
+          <line x1="166" y1="147" x2="196" y2="147" stroke="white" stroke-width="2" opacity="0.4"/>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn out" disabled>XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Hoodie Red × White', 89, 'hoodie')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">HOODIE RED × WHITE</div><div class="card-cat">Hoodie</div></div>
+        <div class="card-price-block"><div class="card-price">€89</div></div>
+      </div>
+    </div>
+
+    <!-- 6 — Jersey Navy 88 -->
+    <div class="product-card" data-cat="jersey" data-price="75" data-name="jersey navy university" data-new="0">
+      <span class="card-badge badge-ltd">Ltd</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-b"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="#1A1A4E" stroke="#6080FF" stroke-width="1.5"/>
+          <text x="100" y="130" text-anchor="middle" font-family="sans-serif" font-size="55" font-weight="900" fill="white" opacity="0.9" letter-spacing="-2">88</text>
+          <text x="100" y="72" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#8080FF" letter-spacing="2">UNIVERSITY</text>
+          <text x="100" y="168" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="rgba(255,255,255,0.3)" letter-spacing="2">FET ART</text>
+          <line x1="57" y1="150" x2="143" y2="150" stroke="white" stroke-width="1.5" opacity="0.15"/>
+          <line x1="57" y1="157" x2="143" y2="157" stroke="white" stroke-width="1.5" opacity="0.15"/>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn out" disabled>L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Jersey Navy University', 75, 'jersey')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">JERSEY NAVY UNIV.</div><div class="card-cat">Jersey</div></div>
+        <div class="card-price-block"><div class="card-price">€75</div></div>
+      </div>
+    </div>
+
+    <!-- 7 — Tee Pretty Only -->
+    <div class="product-card" data-cat="tshirt" data-price="60" data-name="tee pretty only collab" data-new="1">
+      <span class="card-badge badge-hot">Collab</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-pw"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="white"/>
+          <path d="M45 22 L22 56 L50 73 L57 50" fill="none" stroke="#FF3FA4" stroke-width="3"/>
+          <path d="M155 22 L178 56 L150 73 L143 50" fill="none" stroke="#FF3FA4" stroke-width="3"/>
+          <text x="100" y="105" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="900" fill="#FF3FA4" letter-spacing="1">PRETTY ONLY</text>
+          <text x="100" y="128" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#FF3FA4" letter-spacing="1.5">FET ART × 88</text>
+          <text x="100" y="150" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="900" fill="rgba(255,63,164,0.12)" letter-spacing="-1">GALLERY</text>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn out" disabled>L</button>
+              <button class="size-btn out" disabled>XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Tee Pretty Only Collab', 60, 'tshirt')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">TEE PRETTY ONLY</div><div class="card-cat">T-Shirt · Collab</div></div>
+        <div class="card-price-block"><div class="card-price">€60</div></div>
+      </div>
+    </div>
+
+    <!-- 8 — Hoodie Black Gallery -->
+    <div class="product-card" data-cat="hoodie" data-price="89" data-name="hoodie black gallery" data-new="0">
+      <div class="card-img-wrap">
+        <div class="card-bg bg-d"></div>
+        <svg class="card-svg" viewBox="0 0 200 240" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70 36 Q100 12 130 36 L135 62 Q100 48 75 62Z" fill="#FF3FA4" stroke="white" stroke-width="0.8"/>
+          <path d="M32 68 L24 160 L32 232 L168 232 L176 160 L168 68 Q153 58 135 56 L132 90 Q100 102 78 90 L75 56 Q47 58 32 68Z" fill="#111" stroke="#FF3FA4" stroke-width="1.5"/>
+          <path d="M32 68 L8 78 L4 162 L34 157 L38 122 L32 86Z" fill="#0A0A0A" stroke="#FF3FA4" stroke-width="1"/>
+          <path d="M168 68 L192 78 L196 162 L166 157 L162 122 L168 86Z" fill="#0A0A0A" stroke="#FF3FA4" stroke-width="1"/>
+          <rect x="4" y="155" width="30" height="10" rx="3" fill="#050505"/>
+          <rect x="166" y="155" width="30" height="10" rx="3" fill="#050505"/>
+          <rect x="32" y="222" width="136" height="12" rx="3" fill="#050505"/>
+          <circle cx="100" cy="162" r="28" fill="none" stroke="#FF3FA4" stroke-width="1.5"/>
+          <circle cx="100" cy="162" r="20" fill="rgba(255,63,164,0.1)"/>
+          <text x="100" y="158" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="900" fill="#FF3FA4" letter-spacing="1">FET ART</text>
+          <text x="100" y="170" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="white" letter-spacing="0.5">GALLERY</text>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Hoodie Black Gallery', 89, 'hoodie')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">HOODIE BLACK GALLERY</div><div class="card-cat">Hoodie</div></div>
+        <div class="card-price-block"><div class="card-price">€89</div></div>
+      </div>
+    </div>
+
+    <!-- 9 — Tee Circle Black -->
+    <div class="product-card" data-cat="tshirt" data-price="55" data-name="tee circle black" data-new="0">
+      <div class="card-img-wrap">
+        <div class="card-bg bg-d"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="#111" stroke="#FF3FA4" stroke-width="2"/>
+          <circle cx="100" cy="90" r="32" fill="none" stroke="#FF3FA4" stroke-width="1.5"/>
+          <circle cx="100" cy="90" r="23" fill="rgba(255,63,164,0.08)"/>
+          <text x="100" y="85" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="900" fill="#FF3FA4" letter-spacing="1">FET ART</text>
+          <text x="100" y="98" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="900" fill="white" letter-spacing="0.5">GALLERY</text>
+          <text x="100" y="148" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="900" fill="#FF3FA4" letter-spacing="-1">88</text>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Tee Circle Black', 55, 'tshirt')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">TEE CIRCLE BLACK</div><div class="card-cat">T-Shirt</div></div>
+        <div class="card-price-block"><div class="card-price">€55</div></div>
+      </div>
+    </div>
+
+    <!-- 10 — Jersey Gris All Over -->
+    <div class="product-card" data-cat="jersey" data-price="80" data-name="jersey all over print" data-new="1">
+      <span class="card-badge badge-new">New</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-g"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="#1A2A1A" stroke="#4AFF4A" stroke-width="1.2"/>
+          <text x="100" y="128" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="900" fill="white" opacity="0.85" letter-spacing="-2">88</text>
+          <text x="100" y="72" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#4AFF4A" letter-spacing="2">FET ART</text>
+          <text x="100" y="165" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="700" fill="rgba(255,255,255,0.3)" letter-spacing="2">ALL OVER PRINT</text>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Jersey All Over Print', 80, 'jersey')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">JERSEY ALL OVER</div><div class="card-cat">Jersey</div></div>
+        <div class="card-price-block"><div class="card-price">€80</div></div>
+      </div>
+    </div>
+
+    <!-- 11 — Tee Vintage 88 -->
+    <div class="product-card" data-cat="tshirt" data-price="50" data-name="tee vintage 88 washed" data-new="0">
+      <div class="card-img-wrap">
+        <div class="card-bg bg-w"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M45 22 L22 56 L50 73 L57 50 L57 205 L143 205 L143 50 L150 73 L178 56 L155 22 Q122 5 100 5 Q78 5 45 22Z" fill="#3A3530"/>
+          <text x="100" y="110" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="900" fill="rgba(255,255,255,0.7)" letter-spacing="2">PROPERTY OF</text>
+          <text x="100" y="132" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="900" fill="white" letter-spacing="1.5">FET ART 88</text>
+          <text x="100" y="152" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">UNIVERSITY EST. 2020</text>
+          <rect x="57" y="164" width="86" height="1.5" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Choisir une taille</span>
+            <div class="size-btns">
+              <button class="size-btn" onclick="selectSize(this)">XS</button>
+              <button class="size-btn" onclick="selectSize(this)">S</button>
+              <button class="size-btn" onclick="selectSize(this)">M</button>
+              <button class="size-btn" onclick="selectSize(this)">L</button>
+              <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Tee Vintage 88 Washed', 50, 'tshirt')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">TEE VINTAGE 88</div><div class="card-cat">T-Shirt</div></div>
+        <div class="card-price-block"><div class="card-price">€50</div></div>
+      </div>
+    </div>
+
+    <!-- 12 — Tote Bag -->
+    <div class="product-card" data-cat="accessoire" data-price="35" data-name="tote bag fetart" data-new="0">
+      <span class="card-badge badge-sold">Bientôt</span>
+      <div class="card-img-wrap">
+        <div class="card-bg bg-p"></div>
+        <svg class="card-svg" viewBox="0 0 200 220" width="155" xmlns="http://www.w3.org/2000/svg">
+          <path d="M75 50 Q100 35 125 50 L130 70 Q100 60 70 70Z" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <rect x="55" y="68" width="90" height="120" rx="4" fill="white" opacity="0.92"/>
+          <rect x="62" y="76" width="76" height="104" rx="3" fill="rgba(255,63,164,0.08)" stroke="rgba(255,63,164,0.3)" stroke-width="1"/>
+          <text x="100" y="128" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="900" fill="#FF3FA4" letter-spacing="1">FET ART</text>
+          <text x="100" y="145" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="900" fill="#FF3FA4">88</text>
+        </svg>
+        <div class="quick-add-overlay">
+          <div class="size-selector">
+            <span class="size-label">Taille unique</span>
+            <div class="size-btns">
+              <button class="size-btn selected" onclick="selectSize(this)">OS</button>
+            </div>
+            <button class="quick-add-btn" onclick="addToCart(this, 'Tote Bag Fetart', 35, 'accessoire')">+ Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-info">
+        <div><div class="card-name">TOTE BAG</div><div class="card-cat">Accessoire</div></div>
+        <div class="card-price-block"><div class="card-price">€35</div></div>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">88</div>
+      <div class="empty-title">Aucun résultat</div>
+      <div class="empty-sub">Essaie un autre terme ou réinitialise les filtres</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="shop-footer">
+  <div class="footer-logo">FET ART <span style="color:var(--pink)">88</span></div>
+  <div class="footer-copy">© 2025 Fet Art Gallery — Éditions limitées</div>
+  <a href="https://www.instagram.com/fetartgallery/" target="_blank" class="footer-insta">@fetartgallery ↗</a>
+</footer>
+
+<script>
+// ── STATE ──
+let activeFilter = 'all';
+let cartItems = [];
+
+// ── FILTERS + SEARCH + SORT ──
+function setFilter(btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.cat;
+  applyFilters();
+}
+
+function applyFilters() {
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  const sort = document.getElementById('sortSelect').value;
+  const cards = Array.from(document.querySelectorAll('.product-card[data-cat]'));
+
+  // Filter
+  let visible = cards.filter(card => {
+    const catMatch = activeFilter === 'all' || card.dataset.cat === activeFilter;
+    const nameMatch = !query || card.dataset.name.includes(query);
+    return catMatch && nameMatch;
+  });
+
+  // Sort
+  visible.sort((a, b) => {
+    if (sort === 'price-asc') return +a.dataset.price - +b.dataset.price;
+    if (sort === 'price-desc') return +b.dataset.price - +a.dataset.price;
+    if (sort === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+    return +b.dataset.new - +a.dataset.new; // default: newest first
+  });
+
+  // Hide all
+  cards.forEach(c => c.classList.add('hidden'));
+  // Show filtered in sorted order
+  const grid = document.getElementById('productsGrid');
+  visible.forEach(c => {
+    c.classList.remove('hidden');
+    grid.appendChild(c);
+  });
+
+  // Empty state
+  const empty = document.getElementById('emptyState');
+  empty.classList.toggle('visible', visible.length === 0);
+
+  // Count
+  document.getElementById('countLabel').textContent = visible.length;
+  document.getElementById('visibleCount').textContent = visible.length;
+}
+
+// ── SIZE SELECTION ──
+function selectSize(btn) {
+  if (btn.classList.contains('out')) return;
+  const siblings = btn.closest('.size-btns').querySelectorAll('.size-btn');
+  siblings.forEach(s => s.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+// ── CART ──
+function addToCart(btn, name, price, cat) {
+  const sizeBtn = btn.closest('.size-selector').querySelector('.size-btn.selected');
+  const size = sizeBtn ? sizeBtn.textContent : '?';
+  cartItems.push({ name, price, cat, size, id: Date.now() });
+  updateCartUI();
+  showToast(`${name} (${size}) ajouté !`);
+}
+
+function updateCartUI() {
+  const count = cartItems.length;
+  document.getElementById('cartCount').textContent = count;
+
+  const total = cartItems.reduce((s, i) => s + i.price, 0);
+  document.getElementById('cartTotal').textContent = `€${total}`;
+
+  const container = document.getElementById('cartItems');
+  const emptyMsg = document.getElementById('cartEmpty');
+
+  // Remove old items (keep empty msg)
+  container.querySelectorAll('.cart-item').forEach(el => el.remove());
+
+  if (count === 0) {
+    emptyMsg.style.display = 'block';
+  } else {
+    emptyMsg.style.display = 'none';
+    cartItems.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'cart-item';
+      el.innerHTML = `
+        <div class="cart-item-img">
+          <svg viewBox="0 0 60 70" width="50" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="70" rx="4" fill="#1A1A1A"/>
+            <text x="30" y="38" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="900" fill="#FF3FA4" letter-spacing="-0.5">88</text>
+          </svg>
+        </div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-meta">${item.cat} · Taille ${item.size}</div>
+          <div class="cart-item-price">€${item.price}</div>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
+      `;
+      container.appendChild(el);
+    });
+  }
+}
+
+function removeFromCart(id) {
+  cartItems = cartItems.filter(i => i.id !== id);
+  updateCartUI();
+}
+
+function openCart() {
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+
+// ── TOAST ──
+let toastTimer;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>
