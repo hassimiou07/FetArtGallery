@@ -734,7 +734,7 @@ footer {
     padding: 10px 10px 10px 10px;
 }
   .hero-left { padding: 3rem 1.5rem 4rem; }
-  .col-grid { grid-template-columns: repeat(2,1fr); }
+  .col-grid { grid-template-columns: 1fr; }
   .featured-banner { grid-template-columns: 1fr; padding: 2.5rem; margin: 0 1.2rem; }
   .university-strip { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
   .univ-logo-block { display: none; }
@@ -743,6 +743,6 @@ footer {
   .lookbook-grid .look-item:first-child { grid-row: auto; grid-column: 1/-1; }
   .cat-grid { grid-template-columns: repeat(2,1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; }
-  .collections { padding: 5rem 1.5rem 3rem; }
+  .collections { padding: 5rem 1.5rem 3rem;}
   .newsletter { padding: 4rem 1.5rem; }
 }
