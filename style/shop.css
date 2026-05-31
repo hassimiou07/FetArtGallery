@@ -333,7 +333,9 @@ nav {
   border-top: 1px solid var(--border);
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
 }
-.footer-logo { font-family: 'Anton', sans-serif; font-size: 1.2rem; letter-spacing: 0.15em; }
+.footer-img { width: 168px; height: 132px; filter: drop-shadow(0 2px 4px rgba(255,63,164,0.4)); }
+.footer-logo { font-family: 'Anton', sans-serif; font-size: 1.2rem; letter-spacing: 0.15em;
+display : flex; align-items: center; gap: 0.; }
 .footer-copy { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; color: var(--mid); text-transform: uppercase; }
 .footer-insta { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); text-decoration: none; transition: opacity 0.2s; }
 .footer-insta:hover { opacity: 0.7; }

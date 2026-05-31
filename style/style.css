@@ -37,6 +37,26 @@ body {
   height: auto;
   filter: drop-shadow(0 20px 40px rgba(255,63,164,0.4));
 }
+.collections-center{
+  width: 583px;
+  height: 1600px;
+  filter: drop-shadow(0 20px 40px rgba(255,63,164,0.4));
+}
+.cat-img{
+  width: 220px;
+  height: 120px;
+  filter: drop-shadow(0 20px 40px rgba(255,63,164,0.4));
+  border-radius: 20px;
+}
+.asap a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--pink), var(--pink-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
 .loader-bar { width: 200px; height: 2px; background: #222; border-radius: 99px; overflow: hidden; }
 .loader-bar-fill { height: 100%; width: 0; background: var(--pink); border-radius: 99px; animation: fillBar 1.6s cubic-bezier(.4,0,.2,1) forwards; }
 @keyframes fillBar { to { width: 100%; } }
@@ -576,7 +596,7 @@ nav {
   letter-spacing: 0.2em;
   color: rgba(255,255,255,0.4);
   position: absolute;
-  top: 1rem; left: 1rem;
+  top: 10px; left: 1rem;
   z-index: 2;
 }
 .look-caption {
@@ -692,7 +712,7 @@ footer {
 .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-brand {}
 .footer-logo-text { font-family: 'Anton', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--white); margin-bottom: 0.5rem; }
-.footer-logo-sub { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; color: var(--pink); text-transform: uppercase; margin-bottom: 1rem; }
+.footer-logo-sub { font-size: 20px; font-weight: 700; letter-spacing: 0.25em; color: var(--pink); text-transform: uppercase; margin-bottom: 1rem; }
 .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 240px; }
 .footer-col-title { font-family: 'Anton', sans-serif; font-size: 0.8rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); margin-bottom: 1.2rem; text-transform: uppercase; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
@@ -701,6 +721,8 @@ footer {
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1A1A1A; padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem; }
 .footer-copy { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; color: #444; text-transform: uppercase; }
 .footer-social { display: flex; gap: 1rem; }
+.footer-img { width: 168px; height: 132px; filter: drop-shadow(0 2px 4px rgba(255,63,164,0.4)); margin-left:-126px;}
+
 .social-btn {
   width: 36px; height: 36px;
   border: 1px solid #2A2A2A;
@@ -725,6 +747,7 @@ footer {
    .nav-links li {
     display: none;
   }
+  .footer-img { width: 168px; height: 132px; filter: drop-shadow(0 2px 4px rgba(255,63,164,0.4)); margin-left:-16px;}
 
   .nav-links .mobile-visible {
     display: block;
@@ -739,10 +762,11 @@ footer {
   .university-strip { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
   .univ-logo-block { display: none; }
   .lookbook { padding: 4rem 1.5rem; }
-  .lookbook-grid { grid-template-columns: 1fr 1fr; }
+  .lookbook-grid { grid-template-columns: 1fr; }
   .lookbook-grid .look-item:first-child { grid-row: auto; grid-column: 1/-1; }
-  .cat-grid { grid-template-columns: repeat(2,1fr); }
+  .cat-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .collections { padding: 5rem 1.5rem 3rem;}
   .newsletter { padding: 4rem 1.5rem; }
+
 }
