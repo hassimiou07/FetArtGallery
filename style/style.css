@@ -31,8 +31,11 @@ body {
 .loader-logo { font-family: 'Anton', sans-serif; font-size: 5rem; letter-spacing: 0.2em; background: linear-gradient(135deg, var(--pink), var(--pink-light), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 1.5s ease-in-out infinite; }
 @keyframes shimmer { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.4); } }
 .loader-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.4em; color: var(--gray-mid); text-transform: uppercase; }
-.loader-sub img { width: 120px; height: auto; filter: drop-shadow(0 10px 20px rgba(255,63,164,0.4));
-
+.loader-sub img { width: 250px; height: 180px; filter: drop-shadow(0 10px 20px rgba(255,63,164,0.4));}
+.collections-img{
+  width: 420px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(255,63,164,0.4));
 }
 .loader-bar { width: 200px; height: 2px; background: #222; border-radius: 99px; overflow: hidden; }
 .loader-bar-fill { height: 100%; width: 0; background: var(--pink); border-radius: 99px; animation: fillBar 1.6s cubic-bezier(.4,0,.2,1) forwards; }
